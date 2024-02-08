@@ -2,17 +2,15 @@ function updateTime() {
   // Los Angeles
   let losAngelesElement = document.querySelector("#los-angeles");
   if (losAngelesElement) {
-    let losAngelesDateElement = loosAngelesElement.querySelector(".date");
+    let losAngelesDateElement = losAngelesElement.querySelector(".date");
     let losAngelesTimeElement = losAngelesElement.querySelector(".time");
-    let losAngelesTime = moment().tz("America/Los_Angeles");
+    let losAngelesTime = moment().tz("Europe/London");
 
     losAngelesDateElement.innerHTML = losAngelesTime.format("MMMM DD YYYY");
     losAngelesTimeElement.innerHTML = losAngelesTime.format(
       "h:mm:ss [<small>]A[</small>]"
     );
   }
-
-  // Dublin
 
   let dublinElement = document.querySelector("#dublin");
   if (dublinElement) {
@@ -48,7 +46,6 @@ function updateCity(event) {
   <a href="/">All cities</a>
   `;
 }
-
 
 updateTime();
 setInterval(updateTime, 1000);
